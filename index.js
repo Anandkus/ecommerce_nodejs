@@ -1,10 +1,11 @@
 const express = require('express');
-const db = require("./confiq/conn");
+const db = require("./config/conn");
 const userRouter = require("./routes/user");
 const proudctRouter = require("./routes/product");
 const ownerRouter = require("./routes/owner");
 const app = express();
 
+require('dotenv').config();
 const cookieParser = require("cookie-parser");
 const path = require("path");
 
