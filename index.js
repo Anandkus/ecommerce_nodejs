@@ -3,6 +3,7 @@ const db = require("./config/conn");
 const userRouter = require("./routes/user");
 const proudctRouter = require("./routes/product");
 const ownerRouter = require("./routes/owner");
+const shopRouter = require("./routes/shop");
 const app = express();
 
 require('dotenv').config();
@@ -18,12 +19,12 @@ app.set("view engine", "ejs");
 app.use("/user", userRouter);
 app.use("/product", proudctRouter);
 app.use("/owner", ownerRouter);
+app.use("/shop", shopRouter)
 
 
 app.get("/", (req, res) => {
-    res.send("this is ")
+    res.send('this is index page !')
 })
-
 app.listen(1101, (req, res) => {
     console.log("server is run ")
 })

@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 router.get("/", (req, res) => {
     res.send("this is owner router ")
 });
-
+console.log("value = ",process.env.NODE_ENV)
 //in terminal ->  set NODE_ENV=development
 if (process.env.NODE_ENV === 'development') {
     router.post("/create", async (req, res) => {

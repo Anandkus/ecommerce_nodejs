@@ -19,7 +19,7 @@ module.exports.UserRegister = async (req, res) => {
                     })
                     const token = generateTokenfun(createdUser);
                     res.cookie("token", token);
-                    return res.status(201).send({ msg: "user created Successfully ", auth: true });
+                    return res.status(201).send({ msg: "user created Successfully ", token:token });
                 }
             })
         })
@@ -40,7 +40,7 @@ module.exports.userLogin = async (req, res) => {
         if (passwordResult) {
             const token = generateTokenfun(user);
             res.cookie("token", token);
-            return res.status(201).send({ msg: "Login Successfully ", auth: true });
+            return res.status(201).send({ msg: "Login Successfully ", token:token });
         }
         else {
             return res.status(401).send("Something Wrong ! ! ")
