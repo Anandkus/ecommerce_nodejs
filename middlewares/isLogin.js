@@ -7,7 +7,7 @@ module.exports.isLogedIn = async (req, res, next) => {
     }
     try {
         const decoded = jwt.verify(req.cookies.token, process.env.JWT_KEY);
-        const user = await userModel.findOne({ email: decoded.email }).select("-password");  //password nahi chaiye 
+        const user = await userModel.findOne({ email: decoded.email }).select('-password');  //password nahi chaiye 
         req.user = user;
         next();
 
